@@ -1,0 +1,8 @@
+<swiper indicator-active-color='#fff'  indicator-dots="true" bindchange="bindchange">
+        <block wx:for="{{imgs}}" wx:for-index="index" wx:key="swiperItem" wx:for-item="item" >
+          <swiper-item class="swiper-items"  >
+            <image class="swiper-image" src="{{item}}"></image>
+            <button class="button-img" bindtap="start"  >立即体验</button>
+          </swiper-item>
+        </block>
+    </swiper>

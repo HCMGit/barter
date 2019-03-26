@@ -1,0 +1,23 @@
+{
+  "pages": [
+    
+    "pages/main/main",
+    "pages/index/index",
+    "pages/chat/chat",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib"
+  ],
+  "window": {
+   "navigationBarBackgroundColor":"#663399",
+   "navigationBarTitleText":"第一个小程序"
+  },
+  "permission":{
+    "scope.userLocation": {
+      "desc": "你的位置信息将用来为你寻找附近的物品"
+    }
+  }
+}

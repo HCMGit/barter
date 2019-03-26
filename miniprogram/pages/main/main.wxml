@@ -1,0 +1,18 @@
+
+
+<view class="page-body-info" bindtap='uploader'>
+<image class='userinfo-avatar' src='{{bigImg}}'></image>
+</view>
+<form bindsubmit='res'>
+<view>
+<input type='text' maxlength='10' name="goodsname" placeholder='请输入名字'></input>
+</view>
+<view>
+<textarea
+    name="goodsdetail"
+    placeholder="placeholder颜色是红色的"
+    placeholder-style="color:red;"
+  />
+</view>
+<view><button form-type='submit'>提交</button> </view>
+</form>
