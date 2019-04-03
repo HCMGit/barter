@@ -11,7 +11,11 @@ exports.main = async (event, context) => {
         _openid:event._openid, 
         goodsname:event.goodsname,
         imagepath:event.imagepath,
-        goodsdetail:event.goodsdetail
+        goodsdetail:event.goodsdetail,
+        avatarUrl:event.avatarUrl,
+        nickName:event.nickName,
+        due:new Date(),
+        show:true
     }
   })
 }

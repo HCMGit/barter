@@ -2,7 +2,13 @@
 App({
   
   globalData: {
-    openid:''
+    singleChoiceAnswerNow:[],
+    openid:'',
+    latitude:1,
+    longitude:1,
+    nickName:'',
+    avatarUrl:'',
+    userInfo:''
   },
   onLaunch: function () {
     if (!wx.cloud) {
@@ -19,25 +25,29 @@ App({
       data: {},
       success: res => {
         that.globalData.openid = res.result.openid;
-        console.log(that.globalData.openid)
+       
         db.collection('basicinfo').where({
           _openid:that.globalData.openid
         }).get({
           success: res => {
-            console.log(res.data.length)
+           
             if (res.data.length!=0)
             {
-              ///////////////////////////////更新信息
+      ///////用户存在时获得用户信息和地理位置，并更新用户信息地理位置
               wx.getUserInfo({
                 success: function (res) {
+                  that.globalData.nickName=res.userInfo.nickName
+                  that.globalData.avatarUrl=res.userInfo.avatarUrl
+                  that.globalData.userInfo=res.userInfo
                   const db = wx.cloud.database()
                   db.collection('basicinfo').doc(that.globalData.openid).update({
                     data: {
-                      nickname: res.userInfo.nickName,
-                      avatarUrl: res.userInfo.avatarUrl
+                      nickName: res.userInfo.nickName,
+                      avatarUrl: res.userInfo.avatarUrl,
+                      
                     }
                   }).then(res => {
-                    console.log(res)
+                   
                   }).catch(console.error)
                 }
 
@@ -47,6 +57,8 @@ App({
                 success: function (res) {
                   var latitude = 1
                   var longitudee = 1
+                  that.globalData.latitude=res.latitude
+                  that.globalData.longitude=res.longitude
                   latitude = res.latitude
                   longitudee = res.longitude
                   const db = wx.cloud.database()
@@ -56,11 +68,12 @@ App({
                       longitudee:longitudee
                     }
                   }).then(res => {
+                    console.log(that.globalData.latitude)
                     if (that.openidCallback) {
                       that.openidCallback(that.globalData.openid);   
                     }
 
-                    console.log(res)
+                    
                   }).catch(console.error)
                 },
               })
@@ -70,17 +83,21 @@ App({
               //////////////////////////////////////////////////
             }
             else{
-              //////////////////////////////////////////首次登录插入信息
+              /////////////////////用户不存在时，插入用户基本信息和用户地理位置
               wx.getUserInfo({
                 success: function (res) {
+                  that.globalData.nickName = res.userInfo.nickName
+                  that.globalData.avatarUrl = res.userInfo.avatarUrl
+                  that.globalData.userInfo = res.userInfo
                   const db = wx.cloud.database()
                   db.collection('basicinfo').add({
                     data: {
-                      nickname: res.userInfo.nickName,
-                      avatarUrl: res.userInfo.avatarUrl
+                      nickName: res.userInfo.nickName,
+                      avatarUrl: res.userInfo.avatarUrl,
+                   
                     }
                   }).then(res => {
-                    console.log(res)
+                    
                   }).catch(console.error)
                 }
 
@@ -90,6 +107,8 @@ App({
                 success: function (res) {
                   var latitude = 1
                   var longitudee = 1
+                  that.globalData.latitude = res.latitude
+                  that.globalData.longitude = res.longitude
                   latitude = res.latitude
                   longitudee = res.longitude
                   const db = wx.cloud.database()
@@ -102,7 +121,7 @@ App({
                     if (that.openidCallback) {
                       that.openidCallback(that.globalData.openid);
                     }
-                    console.log(res)
+                   
                   }).catch(console.error)
                 },
               })
@@ -121,15 +140,13 @@ App({
       fail: err => {
         wx.showToast({
           icon: 'none',
-          title: '获取 openid 失败，请检查是否有部署 login 云函数',
+          title: '',
         })
-        console.log('[云函数] [login] 获取 openid 失败，请检查是否有部署云函数，错误信息：', err)
+        
       }
     })
   },
-   
  
-  
   })
   
   

@@ -1,8 +1,38 @@
 <swiper indicator-active-color='#fff'  indicator-dots="true" bindchange="bindchange">
-        <block wx:for="{{imgs}}" wx:for-index="index" wx:key="swiperItem" wx:for-item="item" >
+        <block wx:for="{{goodsinfo}}" wx:for-index="index1" wx:key="swiperItem" wx:for-item="item" >
           <swiper-item class="swiper-items"  >
-            <image class="swiper-image" src="{{item}}"></image>
-            <button class="button-img" bindtap="start"  >立即体验</button>
+          <!--主部件start--->
+            <image class='userinfo-avatar' src='{{item.avatarUrl}}'></image>
+            <text class='userinfo-nickname'>{{item.nickName}}</text>
+            <scroll-view class='box-sv' scroll-x="true">    
+             <image wx:for="{{item.imagepath}}" wx:key="{{index}}" wx:for-item="item1" src='{{item1.fileID}}'  bindtap='img'                       mode="aspectFill"  data-url='{{item1.fileID}}' data-index='{{index1}}'></image>  
+            </scroll-view>
+            <text class='goodsname'>{{item.goodsname}}</text>
+            <textarea class='goodsdetail' disabled='true'>{{item.goodsdetail}}</textarea>
+            <button class="button-img" bindtap="start"  >留言</button>
+            <!--主部件end-->
           </swiper-item>
         </block>
     </swiper>
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+      <view class="modal-title">留言</view>
+</view>
+
+<view class="modal-dialog" wx:if="{{showModal}}">
+<form bindsubmit="submitForm">
+  <view class="modal-title">留言</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <textarea name="message" placeholder-class='input-holder'maxlength="-1"></textarea>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <button class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</button>
+    <button class="btn-confirm"  form-type="submit" data-status="confirm"
+    >确定</button>
+  </view>
+  </form>
+</view>
+
+

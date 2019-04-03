@@ -1,0 +1,190 @@
+
+.names {
+
+  display: flex;
+
+  font-size: 30rpx;
+
+  line-height: 40rpx;
+
+}
+
+.input_null {
+
+  color: #c9c9c9;
+
+}
+
+.release {
+
+  align-items: flex-end; /*底部对齐*/
+
+  box-sizing: border-box;
+
+  position: fixed;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  padding: 18rpx 0 18rpx 30rpx;
+
+  background-color: #f7f8f7;
+
+  font-size: 28rpx;
+
+  z-index: 999;
+
+}
+
+ .replyinfo1{ 
+
+  display: flex;
+
+  justify-content: space-between; /*两端对齐*/
+
+  font-size: 35rpx;
+
+}
+
+.replyinfo2{ 
+
+  display: flex;
+
+  justify-content: space-between; /*两端对齐*/
+
+}
+
+ .release .text { 
+    font-size: 40rpx; 
+     color: #c9c9c9;} 
+ .cancel { 
+    width: 240rpx; 
+    height: 64rpx; 
+    line-height: 64rpx; 
+    text-align: center; 
+    color: #6c0;
+    margin: 0 3px;
+    padding: 0;}
+
+
+.release.textarea {
+
+  width: 550rpx;
+
+  min-height: 34rpx;
+
+  max-height: 102rpx; /*最多显示三行*/
+
+  border-width: 15rpx 20rpx; /*使用padding与预期留白不一致，故使用border*/
+
+  border-style: solid;
+
+  border-color: rgb(248, 132, 132);
+
+  line-height: 34rpx;
+
+  font-size: 28rpx;
+
+  background-color: #fff;
+
+  border-radius: 4rpx;
+
+}
+
+ 
+
+.release.text {
+
+  font-size: 40rpx;
+
+  color: #c9c9c9;
+
+}
+.release .submit {
+
+  width: 120rpx;
+
+  height: 64rpx;
+
+  line-height: 64rpx;
+
+  text-align: center;
+
+  color: #6c0;
+
+  margin: 0 3px;
+
+  padding: 0;
+
+}
+.pro-box .info .text .delete {
+
+  color: #f68135;
+
+  border-radius: 50rpx;
+
+  border: 1px solid #f68135;
+
+  font-size: 28 rpx;
+
+  width: 150rpx;
+
+  height: 48rpx;
+
+  text-align: center;
+
+}
+.comment1{
+	width: 550rpx;
+	height: 48rpx;
+  text-overflow:ellipsis;
+  word-wrap:break-word;
+ 
+
+} 
+.addr-info{
+
+align-items: center;
+justify-content: space-between;	
+margin: 0 -20rpx;	
+margin-bottom: 20rpx;
+padding-bottom: 20rpx;
+padding-left: 20rpx;
+padding-right: 20rpx; 
+display: inline-block;
+
+}
+.addr-text{
+
+	font-size: 35rpx;
+
+	line-height: 40rpx;
+
+  width:100%;
+
+}
+.comment{
+ color: white;
+	width: 55rpx;
+
+	height: 48rpx;
+
+} 
+.hidden {
+  display: none;
+}
+ 
+.show {
+  display: block;
+}
+/* 横着的分割View样式 */
+/*分割线样式*/
+.divLine{
+ border-bottom: 1px dashed #ccc;
+ width: 100%;
+ height: 10rpx;
+}
+

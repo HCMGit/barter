@@ -1,19 +1,46 @@
 {
   "pages": [
-    
+    "pages/appear/appear",
+    "pages/mymessage/mymessage",
     "pages/main/main",
-    "pages/index/index",
-    "pages/chat/chat",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/photo/add-photo",
+    "pages/logs/logs",
+  
+    "pages/feedback/feedback",
+   
+    "pages/my/my",
+    "pages/album/view",
+    "pages/album/list",
+    "pages/reply/reply"
   ],
+"tabBar": {
+  "selecctedColor": "#00FF00",
+  "backgroundColor": "#eeeeee",
+  "position": "bottom",
+  "list": [
+    {
+      "pagePath": "pages/appear/appear",
+      "text": "首页",
+      "iconPath": "images/goods.png",
+      "selectedIconPath": "images/goods.png"
+    },
+    {
+      "pagePath": "pages/mymessage/mymessage",
+      "text": "留言",
+      "iconPath": "images/message.png",
+      "selectedIconPath": "images/message.png"
+    },
+    {
+      "pagePath": "pages/main/main",
+      "text": "我的",
+      "iconPath": "images/qipao.png",
+      "selectedIconPath": "images/qipao.png"
+    }
+  ]
+},
   "window": {
    "navigationBarBackgroundColor":"#663399",
-   "navigationBarTitleText":"第一个小程序"
+   "navigationBarTitleText":"易物"
   },
   "permission":{
     "scope.userLocation": {

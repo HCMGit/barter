@@ -1,0 +1,42 @@
+<view class="photo-add">
+    <form bindsubmit="formSubmit">
+    <view class="desc">
+        <textarea name="goodsname" placeholder="填写备注（可以不写）" />
+    </view>
+    
+    <view class="select-album">
+        <view class="title">请输入物品名字</view>
+        <view>
+        <textarea name="goodsdetail" class="picker" placeholder="物品名字" maxlength='10'></textarea>
+        </view>
+    </view>
+    
+    <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">点击可预览选好的图片</view>
+                  <view class="weui-uploader__info"></view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{photos}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image.src}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+    <view class="btn-box">
+        <button type='primary' formType="submit" size="default">提交</button>
+    </view>
+    </form>
+</view>

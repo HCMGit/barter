@@ -1,0 +1,16 @@
+<view class="albums">
+    <block wx:for="{{albums}}" wx:key="id" wx:for-index="idx" wx:for-item="album">
+        
+        <view class="album"  >
+        <view bindtap='t'data-index='{{idx}}'>
+            <view class="name">{{album.goodsname}}</view>
+            <view class="update-time">{{album.due}}</view>
+            </view>
+             <view class="photo-total" data-goodsid='{{album._id}}' bindtap='onCancel' >X</view>
+        </view>
+        
+        
+    </block>
+</view>
+
+

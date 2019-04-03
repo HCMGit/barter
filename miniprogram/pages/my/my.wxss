@@ -129,6 +129,3 @@ input-holder {
   left: 10rpx;
   word-wrap:break-word
 }
-
-.box-sv{width: 700rpx;padding:0rpx;height: 400rpx;white-space:nowrap;margin:3% auto}
-.box-sv image{width: 700rpx;height: 400rpx;margin-right: 30rpx;border-radius: 5px;}

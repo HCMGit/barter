@@ -1,0 +1,8 @@
+<view>
+<form bindsubmit="submitform">
+<textarea name="feedback" placeholder='对于该小程序有任何疑问或发现任何缺陷，或者对于小程序有什么想法，又或者对微信小游戏有什么想法的，可以在这里发信息给我' maxlength='-1' value='{{textarea}}'
+style="border:0;border-radius:5px;background-color:rgba(241,241,241,.98);width:750rpx;height:350rpx;"></textarea>
+<button class='btn1' form-type='submit'>
+发送</button>
+</form>
+</view>

@@ -1,0 +1,21 @@
+
+<view class='ceshi_swiper'>
+    <swiper class='read_swiper' indicator-dots='{{swiper.indicatorDots}}' autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" current="{{swiper.current}}">
+      <block wx:for="{{swiper.imgUrls}}">
+        <swiper-item>
+          <image src="{{item.fileID}}" class="slide-image"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+   
+    <view class='ceshi_next' bindtap='nextImg'>
+      <text class='icon iconfont icon-you'>》</text>
+    </view>
+    <view class='ceshi_prew' bindtap='prevImg'>
+      <text class='icon iconfont icon-zuo'>《</text>
+    </view>
+
+    <textarea disabled='true'class='goodsdetail'>{{goodsdetail}}</textarea>
+    </view>
+
+

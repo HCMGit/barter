@@ -1,13 +1,64 @@
-.page-body-info {
-  padding-bottom: 0;
-  height: 230px;
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .userinfo-avatar {
-  border-radius: 128rpx;
-  width: 128rpx;
-  height: 128rpx;
+  width: 256rpx;
+  height: 256rpx;
+  margin: 20rpx;
+  border-radius: 50%;
 }
+
 .userinfo-nickname {
-  margin-top: 20rpx;
-  font-size: 38rpx;
+  color: #aaa;
 }
+
+.usermotto {
+  margin-top: 200px;
+}
+
+page {
+    background:#FFFFFF;
+}
+
+.menus {
+    margin:0 1em;
+}
+
+.menu {
+    background:#F5F5F5;
+    margin-bottom:.75em;
+    border-radius:5px 0 0 5px;
+    color:#4d4d4d;
+    display:flex;
+    flex-direction: row;
+}
+
+.menu-name {
+    padding:1em 0;
+    width:100%;
+}
+
+.menu-name-text {
+    margin-left:.75em;
+    font-weight:bold;
+    color:#333333;
+}
+
+.menu-option {
+    width:7em;
+    color:#4d4d4d;
+    border-left:#EDEDED solid 1px;
+    padding:1em 0;
+    text-align:center;
+}
+
+.code {
+    text-align:center;
+    padding-top:.75em;
+    color:#FF6600;
+}
+

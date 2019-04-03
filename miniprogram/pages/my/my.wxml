@@ -1,0 +1,12 @@
+<swiper indicator-active-color='#fff'  indicator-dots="true" bindchange="bindchange">
+        <block wx:for="{{goodsinfo}}" wx:for-index="index" wx:key="swiperItem" wx:for-item="item" >
+          <swiper-item class="swiper-items"  >
+            <image class="swiper-image" src="{{item.imagepath}}" ></image>
+            <text class='goodsname'>{{item.goodsname}}</text>
+            <textarea class='goodsdetail' disabled='true'>{{item.goodsdetail}}</textarea>
+            <button class="button-img" bindtap="remove">删除</button>
+            <view bindtap='checkreply'>查看留言</view>
+          </swiper-item>
+        </block>
+</swiper>
+    

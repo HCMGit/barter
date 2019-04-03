@@ -1,0 +1,55 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="refresh">
+  <view class="pro-con">
+    <block wx:for="{{list1}}" wx:key="{{index}}">
+      <view class="pro-box">
+      <!--顶部微信头像和名字-->
+        <view class="head">
+          <image class="img" src="{{item.avatarUrl}}" mode="aspectFit"></image>
+          <view class="box">
+              <view class="fl">
+                    {{item.nickName}}    
+              </view>
+          </view>
+        </view>
+        <!--中间留言-->
+      
+        <view class="addr-info" >
+          <view class='addr-text'>
+           <text class='comment1' data-commentId="{{item._id}}" bindtap='reply'>{{item.message}}</text> 
+          </view>
+        </view>
+          <!-- 分割线 -->
+         <view class="divLine"></view>
+        <!--下方-->
+        <view class="info">
+        <!--评论时间-->
+          <view class="text">
+            <text decode="true">{{item.due}}</text>
+          </view>
+          <!--回复按钮-->
+          <view wx:if="{{item._openid!=userid}}"class="text">
+            <button class="sharebtn" data-commentId="{{item._id}}" data-commentUserName="{{item.userName}}" bindtap="bindReply">回复</button>
+          </view>
+          <!--删除按钮-->
+              <view  class="status text fr">
+                <text class="delete" decode="true" bindtap='deleteComment' data-commentId="{{item._id}}">删除</text>
+              </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+<!--回复表单-->
+<form bindsubmit="submitForm" report-submit="true" class=" {{showOrHidden?'show':'hidden'}}" >
+  <view class="release" >
+  <view class="replyinfo1"> 
+       回复<text class="text"></text>      
+       <button class="cancel" bindtap="cancleReply">取消回复</button>   
+        </view>
+    <!--回复的内容-->
+    <view class="replyinfo2">
+      <textarea placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="false" placeholder="请输入回复" name="comment"></textarea>
+      <button form-type="submit" class="submit">发送</button>
+    </view>
+  </view>
+</form>

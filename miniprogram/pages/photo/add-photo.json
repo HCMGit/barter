@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "上传你的物品",
+  "backgroundColor": "#F2F2F2",
+  "navigationBarBackgroundColor": "#F2F2F2",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}
